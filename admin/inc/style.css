@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400');
+@import url('https://use.fontawesome.com/releases/v5.7.0/css/all.css');
+
+body{ overflow-x:hidden; font-family:raleway }
+.pointer{ cursor:pointer }
+.navbar{ z-index:1; background:#222; height:100%; width:15%; position:fixed; top:0; left: -20%; transition:0.3s ease; padding-top:100px; padding:0 }
+.navbar.visible{ left:0; box-shadow:-5px 0 5px #ccc }
+.navbar li{ list-style:none; cursor:pointer; color:#fff; padding:15px 20px; transition:0.2s linear; font-size:15px }
+.navbar a{ text-decoration:none; display:block; width:100% }
+.navbar li:hover, .navbar .submenu li:hover{ background:#1672e4 }
+.navbar li.dynamic{ margin-bottom:0 }
+.navbar .submenu{ display:none }
+.navbar .submenu li{ padding-left:30px; margin:0; background:#333 }
+.navbar li.dynamic .fa{ transition:0.2s; float:right }
+.navbar li.dynamic .fa.rotated{ transform:rotate(-90deg) }
+
+.square-container{ width:35px; height:45px; position:fixed; left:10px; cursor:pointer; z-index:3; margin:30px }
+.square-container .bar{ border-radius:10px; width:100%; background:#fff; height:2px; position:absolute; top:25%; transition:0.15s, visibility 0s linear }
+.square-container.active .bar{ background:#222 }
+.square-container .bar.x1{ transform:rotate(-45deg) }
+.square-container .bar.x2{ transform:rotate(45deg) }
+.square-container .bar.x3{ top:25%; visibility:hidden }
+.square-container.active .bar.x1{ transform:rotate(0deg); top:0 }
+.square-container.active .bar.x2{ transform:rotate(0deg); bottom:0; top:50% }
+.square-container.active .bar.x3{ right:0; transition:visibility 0s; visibility:visible }
+
+.multi, .single{
+    background:#f8f8f8
+}
+
+.toast{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    z-index:2
+}
+
+@media screen and (max-width:800px){
+    .navbar{ width:20%; right:-20% }
+}
